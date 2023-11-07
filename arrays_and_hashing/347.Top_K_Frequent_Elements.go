@@ -9,7 +9,7 @@ func topKFrequent(nums []int, k int) []int {
 	for number, frequency := range hash {
 		// colocando no array de array bucket a partir do count -> values
 		// index => frequencia
-		// dnetro do array => number
+		// dnetro do array => número com aquela quantidade de ocorrências
 		bucket[frequency] = append(bucket[frequency], number)
 	}
 
