@@ -14,14 +14,14 @@ func romanToInt(s string) int {
 	count := 0
 	for i := len(s) - 1; i >= 0; i-- {
 		currStr := string(s[i])
-		if i < len(s)-1 {
+		if i >= len(s)-1 {
+			count += roman[currStr]
+		} else {
 			if roman[currStr] < roman[string(s[i+1])] {
 				count -= roman[currStr]
 			} else {
 				count += roman[currStr]
 			}
-		} else {
-			count += roman[currStr]
 		}
 	}
 
